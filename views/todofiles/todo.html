@@ -1,0 +1,14 @@
+<% include ../partials/header.html %>
+<h1>This is my Todo Home page!!</h1>
+<p>Enter the Items to save in Database!</p>
+<form id="Save-items" method="POST" action="/todo">
+	<label for="1">Enter Item 1:</label>
+	<input type="text" name="item" placeholder="Item" required/><br>
+	<label for="2">Enter Item 2:</label>
+	<input type="text" name="item" placeholder="Item" required/><br>
+	<label for="3">Enter Item 3:</label>
+	<input type="text" name="item" placeholder="Item" required/><br>
+	<input type="submit" name="submit" value="Submit" />
+</form>
+<%=todos %>
+<% include ../partials/footer.html %>

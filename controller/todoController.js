@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var assert = require('assert');
 var mocha = require('mocha');
 mongoose.Promise = global.Promise;
+
 //connect to a database	
 // before(function(done){
 	mongoose.connect('mongodb://127.0.0.1/testing', { useNewUrlParser: true });
@@ -20,20 +21,32 @@ var todoSchema = new mongoose.Schema({
 	});
 // Create model
 var todo = mongoose.model('Todo', todoSchema);
-// var itemOne = todo({item:'Get some keys!'}).save(function(err){
-// 	if(err) throw err;
-// 	console.log('item saved');
-// });
-// mongoose.model.findOneAndRemove = new todo();
-// mongoose.connection.collections.findOneAndRemove({item:'Get some keys!'});
+
+// delete database's all items
+todo.deleteMany({}, function(err,data){
+	if(err) throw err;
+	console.log("Data Deleted!");
+});
 
 module.exports = function(app){
+
+	var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 	app.get('/todo', function(req, res){
 		// data from mongoDB
 		todo.find({}, function(err, data){
 			if(err) throw err;
 			res.render('todofiles/todo',{todos:data});
+		});
+	});
+	app.post('/todo', urlencodedParser, function(req,res){
+		var d = req.body;
+		todo(d).save(function(err){
+			if(err) throw err;
+			todo.find({}, function(err, data){
+				if(err) throw err;
+				res.render('todofiles/todo',{todos:data});
+			});
 		});
 	});
 };
