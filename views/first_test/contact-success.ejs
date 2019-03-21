@@ -1,0 +1,11 @@
+<% include ../partials/header.ejs %>
+<% include ../partials/nav.ejs %>
+<h1>Submitted Successfully!</h1>
+<p>Form Details are:</p>
+<div class="details">
+	<strong>Name:</strong><%= data.name %><br>
+	<strong>School:</strong><%= data.schoolname %><br>
+	<strong>Email Id:</strong><%= data.email %>
+</div>
+<button><a href="/contact">Back</a></button>
+<% include ../partials/footer.ejs %>
