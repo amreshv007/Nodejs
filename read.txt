@@ -1,0 +1,40 @@
+1.
+const server = ht.createServer( (req, res) => {
+	res.writeHead(200, {'Content-Type': 'text/html'});
+	var myReadStream = fs.createReadStream(__dirname + '/index.html', 'utf8');
+	if(req.url ==='/')
+		myReadStream.pipe(res);
+});
+
+
+server.listen(8000, '127.27.16.1');
+
+console.log("Hi Dear!!!!, 8000 port is running!");
+
+2.
+const ht = require('http');
+
+const fs = require('fs');
+
+const server = ht.createServer( (req, res) => {
+	console.log("current url is:"+req.url);
+	if(req.url ==='/' || req.url==='/home') {
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		var myReadStream = fs.createReadStream(__dirname + '/index.html');
+		myReadStream.pipe(res);
+	}
+	else if(req.url==='/contact-us'){
+		res.writeHead(200, {'Content-Type': 'text/html'});
+		var read = fs.createReadStream(__dirname + '/contact.html');
+		read.pipe(res);	
+	}
+	else {
+		res.writeHead(404, {'Content-Type': 'text/html'});
+		fs.createReadStream(__dirname + '/404.html').pipe(res);
+	}
+});
+
+server.listen(8000, '127.27.16.1');
+console.log("Hi Dear!!!!, 8000 port is running!");
+
+

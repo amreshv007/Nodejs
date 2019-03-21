@@ -1,0 +1,24 @@
+{
+  "name": "nodejsapp",
+  "version": "1.0.0",
+  "description": "A small test of node.js app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "learn",
+    "node.js",
+    "cool",
+    "easy"
+  ],
+  "author": "Amresh",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mocha": "^5.2.0",
+    "mongoose": "^5.4.7"
+  }
+}
