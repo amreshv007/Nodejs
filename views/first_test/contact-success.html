@@ -1,22 +1,28 @@
 <% include ../partials/header.html %>
 <% include ../partials/nav.html %>
-<h1>Contact Us!</h1>
-<p>first contact us then talk!!!</p>
-<form id="contact-form" method="POST" action="/contact">
-	<label for="who">Enter your Name:</label>
-	<input type="text" name="name" placeholder="Name" required="" /><br>
-	<label for="school">Enter your School:</label>
-	<input type="text" name="schoolname" placeholder="School Name" required="" /><br>
-	<label for="email">Enter your Email Id:</label>
-	<input type="text" name="email" placeholder="Email" required="" /><br>
-	<input type="submit" name="submit" value="Submit" />
-</form>
-<h1>Submitted Successfully!</h1>
-<p>Form Details are:</p>
-<div class="details">
-	<strong>Name:</strong><%= data.name %><br>
-	<strong>School:</strong><%= data.schoolname %><br>
-	<strong>Email Id:</strong><%= data.email %>
+<div class="row">
+	<div class="col-xs-6 col-md-6">
+		<h1>Contact Us!</h1>
+		<p>first contact us then talk!!!</p>
+		<form id="contact-form" method="POST" action="/contact">
+			<label for="who">Enter your Name:</label>
+			<input type="text" name="name" placeholder="Name" required="" /><br>
+			<label for="school">Enter your School:</label>
+			<input type="text" name="schoolname" placeholder="School Name" required="" /><br>
+			<label for="email">Enter your Email Id:</label>
+			<input type="text" name="email" placeholder="Email" required="" /><br>
+			<input type="submit" name="submit" value="Submit" />
+		</form>
+	</div>
+	<div class="col-xs-6 col-md-6">
+		<h1>Submitted Successfully!</h1>
+		<p>Form Details are:</p>
+		<div class="details">
+			<strong>Name:</strong><%= data.name %><br>
+			<strong>School:</strong><%= data.schoolname %><br>
+			<strong>Email Id:</strong><%= data.email %>
+		</div>
+		<button><a href="/contact">Back</a></button>
+	</div>
 </div>
-<button><a href="/contact">Back</a></button>
 <% include ../partials/footer.html %>
