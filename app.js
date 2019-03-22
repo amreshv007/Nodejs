@@ -2,7 +2,11 @@ var express = require('express');
 
 var app = express();
 
-app.set('view engine', 'ejs');
+// We are using ejs view engine by keeping view files as .html
+var path = require('path');
+app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 app.use('/assets', express.static('public'));
 
