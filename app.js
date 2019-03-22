@@ -8,7 +8,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
-app.use('/assets', express.static('public'));
+app.use('/css', express.static('public/css'));
+app.use('/assets', express.static('node_modules/bootstrap/dist'));
 
 var todoController = require('./controller/todoController');
 
