@@ -8,11 +8,12 @@
 	<p><a href="/profile/anuj">Anuj Srivastava</a></p>
 	<p><a href="/profile/imdad">Imdad Ali</a></p>
 	<p><a href="/profile/amit">Amit kumar</a></p>
+	<p><a href="/profile/arvind">Arvind kumar</a></p>
 <% }else{ %>
 	<h1>Welcome to the profile of <b><%= person %></b></h1>	
 	<p>Hello Guys!!!<br>Welcome to this wonderful website. You will not find any more better site than this. You are at the write place.<br>Thank You!!!!!!!</p><br>
 	<p><strong>Age: </strong><%= data.age %><br></p>
-	<p><strong>Course: </strong><%= data.course %></p><br>
+	<p><strong>Course: </strong><%= data.course %></p>
 	<p><strong>Hobbies:</strong></p>
 	<ul>
 		<% data.hobbies.forEach(function(item){ %>

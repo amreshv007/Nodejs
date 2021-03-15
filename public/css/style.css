@@ -1,9 +1,12 @@
 body{
-	background-color: lightblue;
+	background-color: transparent;
 	text-align: center;
 	font-family: Roboto;
 	margin: 0px;
-	font-size: 30px;
+	font-size: 14px;
+}
+.form_body{
+	background-color: #001b21;
 }
 h1{
 	text-align: center;
@@ -32,3 +35,122 @@ b{
 #contact-form,#Save-items{
 	align-content: left;
 }
+footer {
+	position: fixed;
+    font-size: 18px;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2d2d2d;
+    color: black;
+}
+/* LG WebApps Styling */
+.Signup{
+    background-color: #232b53;
+    padding: 10px;
+}
+.login a{
+	text-decoration: none;
+    font-size: 26px;
+    background-color: #3c51c7;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    border: solid 1px #3c51c7;
+    border-radius: 5px;
+}
+.login{
+	text-align: end;
+	display: none;
+}
+.login :hover{
+	background-color: #b50000fc;
+}
+.team{
+	position: fixed;
+}
+.team a{
+	text-decoration: none;
+    font-size: 35px;
+    color: white;
+}
+.back{
+	width: 100%;
+	background-image: url('/images/Team-Outing-Ideas2.jpg');
+	height: 650px;
+	background-size: cover;
+}
+.heading{
+	width: 100%;
+}
+.heading marquee{
+	font-weight: 600;
+    color: #d42727;
+    font-family: math;
+    font-size: 20px;
+}
+.img{
+	width: 100px;
+	height: 100px;
+	vertical-align: bottom;
+	border: solid 1px white;
+    border-radius: 5px;
+}
+.experiences p{
+	text-align: justify;
+	padding: 5px;
+}
+.experiences p:hover{
+	background-color: #64c0d4c4;
+    color: black;
+    border: solid 1px white;
+    border-radius: 10px;
+}
+.experiences{
+	margin-top: 20px;
+}
+.experiences p b{
+	color: black;
+}
+/*  Outing Data Form CSS */
+.spots{
+	font-weight: bolder;
+	font-family: cursive;
+}
+.Slide1,.Slide2,.Slide3,.Slide4,.Slide5{
+	display: none;
+	border: 2px solid #7373f8;
+	width: -webkit-fill-available;
+	height: 200px;
+}
+.outing_data{
+	margin-top: 30px;
+	margin-bottom: 40px;
+}
+.images{
+	margin-bottom: 5px;
+}
+.resorts p, .outing_form p{
+	font-family: cursive;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    color: #ffffffc9;
+}
+.outing_form p{
+	text-align: center;
+	border: solid 4px #439da5;
+    border-radius: 5px;
+    background-color: maroon;
+    padding: 10px 0px;
+}
+.outing_form a{
+	color: white;
+    text-decoration: none;
+}
+.outing_form p:hover{
+	color: #17a2b8;
+    background-color: #072a00;
+}
+/*  END Outing Data Form CSS */	
+/* END LG WebApps Styling */

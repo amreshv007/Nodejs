@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Team Outing</title>
+		<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+	</head>
+	<body class="back">
+		<div class="Signup">
+			<div class="team"><a href="/team-outing/">Team Outing</a></div>
+			<div class="login login_1">
+			  	<a href="/team-outing/signup">Login</a>
+		  	</div>
+		  	<div class="login login_12">
+			  	<div class="login_2">
+				  	<a href="/team-outing/outing-data" id="person"></a>
+			  	</div>
+			  	<div class="login_2">
+				  	<a href="/team-outing" id="person1">Logout</a>
+			  	</div>
+		  	</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="heading" id="marq">
+					<marquee behavior="scroll" direction="left" scrollamount="5">Please Login to fill the Team Outing Data!</marquee>
+				</div>
+				<div class="col-xs-6 col-sm-4 experiences">
+					<p><img src="/images/arvind.jpeg" class="img" alt="(Image not available)" /><b>Arvind: </b>This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 experiences">
+					<p><img src="/images/amresh.jpg" class="img" alt="(Image not available)" /><b>Amresh: </b>This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 experiences">
+					<p><img src="/images/vikas.jpeg" class="img" alt="(Image not available)" /><b>Vikas: </b>This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.This is the page where we will put our experiences of Team Outing.</p>
+				</div>
+			</div>
+		</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	let getUser = JSON.parse(localStorage.getItem('Users'));
+	if(getUser == null){
+		var x = document.getElementsByClassName("login_1");
+		x[0].style.display = "block";
+	}
+	else{
+		var y = document.getElementsByClassName("login_2");
+		var z = document.getElementsByClassName("login_12");
+		z[0].style.display = "block";
+		y[0].style.display = "inline-block";
+		y[1].style.display = "inline-block";
+		document.getElementById("person").innerHTML = "Hello "+getUser.name+"!";
+		document.getElementById("marq").style.display = "none";
+	}
+	// $(document).ready(function(){
+		$("#person1").on('click', function(e){
+			e.preventDefault();
+			console.log("logout");
+			localStorage.removeItem("Users");
+			window.location.href = "http://localhost:3000/team-outing";
+			console.log("logout1");
+		});
+	// });
+</script>
+<% include ../partials/footer.html %>

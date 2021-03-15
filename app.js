@@ -9,13 +9,17 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 app.use('/css', express.static('public/css'));
+app.use('/js', express.static('public/js'));
+app.use('/images', express.static('public/images'));
+app.use('/team-outing/images/spots', express.static('public/images/spots'));
+app.use('/video', express.static('public/video'));
 app.use('/assets', express.static('node_modules/bootstrap/dist'));
 
-var todoController = require('./controller/todoController');
+// var todoController = require('./controller/todoController');
 
 var testing = require('./controller/testing');
 
-todoController(app);
+// todoController(app);
 
 testing(app);
 

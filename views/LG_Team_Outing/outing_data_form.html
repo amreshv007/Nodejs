@@ -1,0 +1,120 @@
+	<!DOCTYPE html>	
+<head>
+	<title>Team Outing</title>
+	<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body class="form_body">
+	<div class="Signup">
+		<div class="team"><a href="/team-outing/">Team Outing</a></div>
+		<div class="login login_1">
+		  	<a href="/team-outing/signup">Login</a>
+	  	</div>
+	  	<div class="login login_12">
+		  	<div class="login_2">
+			  	<a href="/team-outing/outing-data" id="person"></a>
+		  	</div>
+		  	<div class="login_2">
+			  	<a href="/team-outing" id="person1">Logout</a>
+		  	</div>
+	  	</div>
+	</div>
+	<div class="container outing_data" align="center">
+		<div class="row">
+			<div class="col-sm-12 outing_form">
+				<a href="/team-outing/outing-data/form"><p><span>Click here</span> to fill outing form data!</p></a>
+			</div>
+			<div class="col-sm-12 resorts">
+				<p>Please find the below resorts available for Team Outing.</p>
+			</div>
+      		<div class="col-sm-4 images">
+        		<img class="Slide1" src="images/spots/Palm00.jpg" alt="File not found">
+        		<img class="Slide1" src="images/spots/Palm01.jpg" alt="File not found">
+        		<img class="Slide1" src="images/spots/Palm02.jpg" alt="File not found">
+        		<a class="spots" href="http://www.palmmeadowsclub.com/" target="_blank">Palm Meadows Resort</a>
+      		</div>
+      		<div class="col-sm-4 images">
+        		<img class="Slide2" src="images/spots/Ang00.jpg" alt="File not found">
+        		<img class="Slide2" src="images/spots/Ang01.jpg" alt="File not found">
+        		<img class="Slide2" src="images/spots/Ang02.jpg" alt="File not found">
+        		<a class="spots" href="https://www.angsana.com/en/india/bangalore" target="_blank">Angsana Resort</a>
+      		</div>
+      		<div class="col-sm-4 images">
+        		<img class="Slide3" src="images/spots/Eagle00.jpg" alt="File not found">
+        		<img class="Slide3" src="images/spots/Eagle01.jpg" alt="File not found">
+        		<img class="Slide3" src="images/spots/Eagle02.jpg" alt="File not found">
+        		<a class="spots" href="https://www.eagletonindia.com/pages/resort/Resort-home.html" target="_blank">Eagleton Golf Resort</a>
+      		</div>
+      	<!-- </div>
+      	<div class="row"> -->
+      		<div class="col-sm-4 images">
+        		<img class="Slide4" src="images/spots/Yogi00.jpg" alt="File not found">
+        		<img class="Slide4" src="images/spots/Yogi01.jpg" alt="File not found">
+        		<img class="Slide4" src="images/spots/Yogi02.jpg" alt="File not found">
+        		<a class="spots" href="http://www.yogisthaan.com/" target="_blank">Yogisthaan Resort</a>
+      		</div>
+      		<div class="col-sm-4 images">
+        		<img class="Slide5" src="images/spots/Clarks00.jpg" alt="File not found">
+        		<img class="Slide5" src="images/spots/Clarks01.jpg" alt="File not found">
+        		<img class="Slide5" src="images/spots/Clarks02.jpg" alt="File not found">
+        		<a class="spots" href="https://www.clarksexotica.com/" target="_blank">Clarks Exotica Resort</a>
+      		</div>
+      	</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		var myIndex = 0;
+		var u = document.getElementsByClassName("Slide1");
+		var v = document.getElementsByClassName("Slide2");
+		var w = document.getElementsByClassName("Slide3");
+		var x = document.getElementsByClassName("Slide4");
+		var y = document.getElementsByClassName("Slide5");
+		u[0].style.display = "block";
+		v[0].style.display = "block";
+		w[0].style.display = "block";
+		x[0].style.display = "block";
+		y[0].style.display = "block";
+		carousel();
+		function carousel() {
+			var i;
+			for (i = 0; i < 3; i++) {
+			u[i].style.display = "none";
+			v[i].style.display = "none";
+			w[i].style.display = "none";
+			x[i].style.display = "none";
+			y[i].style.display = "none";
+			}
+			myIndex++;
+			if (myIndex > 3) {myIndex = 1}
+			u[myIndex-1].style.display = "block";
+			v[myIndex-1].style.display = "block";
+			w[myIndex-1].style.display = "block";
+			x[myIndex-1].style.display = "block";
+			y[myIndex-1].style.display = "block";
+		}
+		setInterval(carousel, 1500);
+
+		let getUser = JSON.parse(localStorage.getItem('Users'));
+		if(getUser == null){
+			var x1 = document.getElementsByClassName("login_1");
+			x1[0].style.display = "block";
+		}
+		else{
+			var y1 = document.getElementsByClassName("login_2");
+			var z1 = document.getElementsByClassName("login_12");
+			z1[0].style.display = "block";
+			y1[0].style.display = "inline-block";
+			y1[1].style.display = "inline-block";
+			document.getElementById("person").innerHTML = "Hello "+getUser.name+"!";
+		}
+		$("#person1").on('click', function(e){
+			e.preventDefault();
+			console.log("logout");
+			localStorage.removeItem("Users");
+			window.location.href = "http://localhost:3000/team-outing";
+			console.log("logout1");
+		});
+    </script>
+	</body>
+</html>
+<!-- <% include ../partials/footer.html %> -->
