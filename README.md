@@ -1,2 +1,4 @@
 # Nodejs
-Basic Development with Node.js and Express
+<b>Developement Tools:</b>
+Nodejs | Mongoose | JavaScript | HTML/CSS
+2 Application developed.
